@@ -5,6 +5,9 @@ openjdk-jdk
 
 Install openjdk-jdk package.
 
+Today, this role used default config files from system packages. I'll take time
+later to generate templates if necessary, or accept pull requests ;)
+
 Requirements
 ------------
 
@@ -27,6 +30,14 @@ Role Variables
 --------------
 
 Follow the possible variables with their default values
+
+    openjdk_jdk_package_state : present
+    openjdk_jdk_version : 7
+
+Debian family specific vars
+
+    openjdk_jdk_packages :
+      - "openjdk-{{ openjdk_jdk_version }}-jdk" }}"
 
 Dependencies
 ------------
