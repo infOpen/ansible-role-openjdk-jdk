@@ -1,65 +1,103 @@
-openjdk-jdk
-===========
+# openjdk-jdk
 
 [![Build Status](https://travis-ci.org/infOpen/ansible-role-openjdk-jdk.svg?branch=master)](https://travis-ci.org/infOpen/ansible-role-openjdk-jdk)
 
 Install openjdk-jdk package.
 
-Today, this role used default config files from system packages. I'll take time
-later to generate templates if necessary, or accept pull requests ;)
+## Requirements
 
-Requirements
-------------
+This role requires Ansible 2.0 or higher,
+and platform requirements are listed in the metadata file.
 
-This role requires Ansible 1.5 or higher, and platform requirements are listed
-in the metadata file.
+## Testing
 
-Testing
--------
+This role use [Molecule](https://github.com/metacloud/molecule/) to run tests.
 
-This role has two test methods :
+Locally, you can run tests on Docker (default driver) or Vagrant.
+Travis run tests using Docker driver only.
 
-- localy with Vagrant :
-    vagrant up
+Currently, tests are done on:
+- Debian Jessie
+- Ubuntu Trusty
+- Ubuntu Xenial
 
-- automaticaly by Travis
+and use:
+- Ansible 2.0.x
+- Ansible 2.1.x
+- Ansible 2.2.x
+- Ansible 2.3.x
 
-Vagrant should be used to check the role before push changes to Github.
+### Running tests
 
-Role Variables
---------------
+#### Using Docker driver
 
-Follow the possible variables with their default values
+```
+$ tox
+```
 
-    openjdk_jdk_package_state : present
-    openjdk_jdk_version : 7
+#### Using Vagrant driver
 
-Debian family specific vars
+```
+$ MOLECULE_DRIVER=vagrant tox
+```
 
-    openjdk_jdk_packages :
-      - "openjdk-{{ openjdk_jdk_version }}-jdk" }}"
+## Role Variables
 
-Dependencies
-------------
+### Default role variables
+
+``` yaml
+# General packages variables
+openjdk_jdk_packages: "{{ _openjdk_jdk_packages }}"
+openjdk_jdk_version: "{{ _openjdk_jdk_version }}"
+
+# APT specific variables
+openjdk_jdk_apt_update_cache: True
+openjdk_jdk_apt_cache_valid_time: 3600
+```
+
+### Default Debian OS family variables
+
+``` yaml
+_openjdk_jdk_packages:
+  - name: "openjdk-{{ openjdk_jdk_version }}-jdk"
+```
+
+### Default Debian Jessie variables
+
+``` yaml
+_openjdk_jdk_version: 7
+```
+
+### Default Ubuntu Trusty variables
+
+``` yaml
+_openjdk_jdk_version: 7
+```
+
+### Default Ubuntu Xenial variables
+
+``` yaml
+_openjdk_jdk_version: 8
+```
+
+## Dependencies
 
 None
 
-Example Playbook
-----------------
+## Example Playbook
 
-    - hosts: servers
-      roles:
-         - { role: achaussier.openjdk-jdk }
+``` yaml
+- hosts: servers
+  roles:
+    - { role: infOpen.openjdk-jdk }
+```
 
-License
--------
+## License
 
 MIT
 
-Author Information
-------------------
+## Author Information
 
 Alexandre Chaussier (for Infopen company)
 - http://www.infopen.pro
-- a.chaussier [at] infopen.pro } }}"
-
+- a.chaussier [at] infopen.pro
