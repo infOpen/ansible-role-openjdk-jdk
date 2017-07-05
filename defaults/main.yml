@@ -1,7 +1,11 @@
 ---
 
-# Defaults file for openjdk-jdk
+# Defaults vars file for openjdk-jdk role
 
-openjdk_jdk_package_state : present
-openjdk_jdk_version : 7
+# General packages variables
+openjdk_jdk_packages: "{{ _openjdk_jdk_packages }}"
+openjdk_jdk_version: "{{ _openjdk_jdk_version }}"
 
+# APT specific variables
+openjdk_jdk_apt_update_cache: True
+openjdk_jdk_apt_cache_valid_time: 3600
