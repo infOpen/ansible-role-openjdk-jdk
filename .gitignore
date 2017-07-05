@@ -1,5 +1,24 @@
-# Ignore vagrant data
-.vagrant
+# Ansible
+*.retry
+roles/
+tests/roles/
 
-# Ignore swap files
+# Swap files
+*.swo
 *.swp
+
+# Python bytecode
+*.pyc
+
+# Pytest
+.cache
+
+# Tox
+.tox
+
+# Vagrant
+.vagrant
+*.log
+
+# Molecule
+.molecule

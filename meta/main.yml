@@ -1,29 +1,21 @@
 ---
 
 galaxy_info:
-  author: Alexandre Chaussier
-  description: Install openjdk-jdk package
-  company: Infopen (http://infopen.pro)
-  license: MIT
-  min_ansible_version: 1.5
-
+  author: 'Alexandre Chaussier'
+  description: 'Install openjdk-jdk package'
+  company: 'Infopen (http://www.infopen.pro)'
+  license: 'MIT'
+  min_ansible_version: '2.0'
+  github_branch: 'master'
   platforms:
-    - name: Ubuntu
+    - name: 'Debian'
       versions:
-        - precise
-        - quantal
-        - raring
-        - saucy
-        - trusty
-        - utopic
-        - vivid
-    - name: Debian
+        - 'jessie'
+    - name: 'Ubuntu'
       versions:
-        - wheezy
-        - jessie
-  categories:
-    - development
-    - web
-
+        - 'trusty'
+        - 'xenial'
+  galaxy_tags:
+    - 'development'
+    - 'system'
 dependencies: []
-
