@@ -1,6 +1,10 @@
 # openjdk-jdk
 
-[![Build Status](https://travis-ci.org/infOpen/ansible-role-openjdk-jdk.svg?branch=master)](https://travis-ci.org/infOpen/ansible-role-openjdk-jdk)
+[![Build Status](https://img.shields.io/travis/infOpen/ansible-role-openjdk-jdk/master.svg?label=travis_master)](https://travis-ci.org/infOpen/ansible-role-openjdk-jdk)
+[![Build Status](https://img.shields.io/travis/infOpen/ansible-role-openjdk-jdk/develop.svg?label=travis_develop)](https://travis-ci.org/infOpen/ansible-role-openjdk-jdk)
+[![Updates](https://pyup.io/repos/github/infOpen/ansible-role-openjdk-jdk/shield.svg)](https://pyup.io/repos/github/infOpen/ansible-role-openjdk-jdk/)
+[![Python 3](https://pyup.io/repos/github/infOpen/ansible-role-openjdk-jdk/python-3-shield.svg)](https://pyup.io/repos/github/infOpen/ansible-role-openjdk-jdk/)
+[![Ansible Role](https://img.shields.io/ansible/role/15858.svg)](https://galaxy.ansible.com/infOpen/openjdk-jdk/)
 
 Install openjdk-jdk package.
 
