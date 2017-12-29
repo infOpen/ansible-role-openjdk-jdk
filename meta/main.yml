@@ -2,10 +2,10 @@
 
 galaxy_info:
   author: 'Alexandre Chaussier'
-  description: 'Install openjdk-jdk package'
+  description: 'Ansible role to manage openjdk-jdk package'
   company: 'Infopen (http://www.infopen.pro)'
   license: 'MIT'
-  min_ansible_version: '2.0'
+  min_ansible_version: '2.2'
   github_branch: 'master'
   platforms:
     - name: 'Debian'
