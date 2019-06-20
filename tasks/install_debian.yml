@@ -3,6 +3,7 @@
 # Debian OS family install tasks
 
 - name: 'INSTALL | APT | Install openjdk-jdk'
+  sudo: yes
   apt:
     name: "{{ item.name }}"
     state: "{{ item.state | default('present') }}"
