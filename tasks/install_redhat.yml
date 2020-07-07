@@ -1,0 +1,10 @@
+---
+
+# Redhat OS family install tasks
+
+- name: 'INSTALL | YUM | Install openjdk-jdk'
+  become: True
+  yum:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ openjdk_jdk_packages }}"
